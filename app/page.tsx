@@ -1,6 +1,6 @@
-import Hero from "@/app/components/Hero";
-import Features from "@/app/components/Features";
-import HowItWorks from "@/app/components/HowItWorks";
+import Hero from "@/components/Hero";
+import Features from "@/components/Features";
+import HowItWorks from "@/components/HowItWorks";
 
 
 
