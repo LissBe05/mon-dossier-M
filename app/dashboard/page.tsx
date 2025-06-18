@@ -1,8 +1,8 @@
 "use client";
 
-import Sidebar from "./components/Sidebar";
-import PeriodLegend from "./components/PeriodLegend";
-import { Card, CardContent, CardHeader, CardTitle } from "./components/ui/card";
+import Sidebar from "@/components/Sidebar";
+import PeriodLegend from "@/components/PeriodLegend";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, FileMedical, CalendarCheck } from "lucide-react";
 
 export default function DashboardPage() {
