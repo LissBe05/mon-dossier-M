@@ -57,6 +57,9 @@ export default function Navbar() {
           <Link href="/login" className="block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
             Connexion
           </Link>
+          <Link href="/register" className="text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700">
+          S'inscrire
+        </Link>
         </div>
       )}
     </nav>

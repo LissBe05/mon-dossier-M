@@ -1,5 +1,5 @@
 'use client'
-
+import LoginForm from "@/components/LoginForm"
 import { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "@/lib/firebase";

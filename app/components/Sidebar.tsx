@@ -1,14 +1,23 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { LayoutDashboard, Users, ActivitySquare, LogOut } from "lucide-react";
-import clsx from "clsx";
 
-const navItems = [
-  { label: "Dashboard", href: "/admin/dashboard", icon: LayoutDashboard },
-  { label: "Patients", href: "/admin/patients", icon: Users },
-  { label: "Activité", href: "/admin/activity", icon: ActivitySquare },
-];
-
-export default function Sidebar ( )
+export default function Sidebar() {
+  return (
+    <aside className="w-64 h-screen bg-gray-100 p-6 border-r">
+      <h2 className="text-xl font-bold mb-6">Dashboard</h2>
+      <ul className="space-y-4">
+        <li>
+          <Link href="/dashboard" className="hover:underline">Accueil</Link>
+        </li>
+        <li>
+          <Link href="/patients" className="hover:underline">Patients</Link>
+        </li>
+        <li>
+          <Link href="/medecins" className="hover:underline">Médecins</Link>
+        </li>
+        <li>
+          <Link href="/admin/activity" className="hover:underline">Activité</Link>
+        </li>
+      </ul>
+    </aside>
+  );
+}
