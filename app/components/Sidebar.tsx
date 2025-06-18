@@ -11,4 +11,4 @@ const navItems = [
   { label: "Activité", href: "/admin/activity", icon: ActivitySquare },
 ];
 
-export default function Sid
+export default function Sidebar
