@@ -37,5 +37,8 @@ export default function PatientCard({
       <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
         <span className="font-medium">Dossier :</span> {dossierNumber}
       </p>
-      <Link
-        href={`/app/patie
+      {/* <Link
+        href={`/app/patie */}
+        </div>
+  )
+}
