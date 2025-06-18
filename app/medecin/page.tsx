@@ -1,8 +1,8 @@
 "use client";
 
-import Sidebar from "@/components/Sidebar";
-import PeriodLegend from "@/components/PeriodLegend";
-import PatientCard from "@/components/PatientCard";
+import Sidebar from "./components/Sidebar";
+import PeriodLegend from "./components/PeriodLegend";
+import PatientCard from "./components/PatientCard";
 import { CalendarCheck, MessageSquareHeart, Stethoscope } from "lucide-react";
 
 export default function MedecinDashboard() {
