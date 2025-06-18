@@ -45,16 +45,16 @@ export default function Navbar() {
           <Link href="/" className="block text-gray-700 hover:text-blue-600">
             Accueil
           </Link>
-          <Link href="/" className="block text-gray-700 hover:text-blue-600">
+          <Link href="/medecin/[id]/page" className="block text-gray-700 hover:text-blue-600">
             Medecin
           </Link>
-          <Link href="/app/medecin" className="block text-gray-700 hover:text-blue-600">
+          <Link href="/patients" className="block text-gray-700 hover:text-blue-600">
             Patients
           </Link>
-          <Link href="/app/dashboard" className="block text-gray-700 hover:text-blue-600">
+          <Link href="/dashboard" className="block text-gray-700 hover:text-blue-600">
             Tableau de bord
           </Link>
-          <Link href="/app/login" className="block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          <Link href="/login" className="block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
             Connexion
           </Link>
         </div>

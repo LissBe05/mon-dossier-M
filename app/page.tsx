@@ -2,7 +2,7 @@ import Hero from "@/app/components/Hero";
 import Features from "@/app/components/Features";
 import HowItWorks from "@/app/components/HowItWorks";
 
-import Footer from "@/app/components/Footer";
+
 
 export default function HomePage() {
   return (
@@ -10,7 +10,7 @@ export default function HomePage() {
       <Hero />
       <Features />
       <HowItWorks />
-      <Footer />
+      
     </main>
   );
 }
