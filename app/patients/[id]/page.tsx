@@ -1,7 +1,3 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
 import PatientCard from "./components/PatientCard";
 
 interface Patient {
@@ -16,49 +12,27 @@ interface Patient {
 }
 
 interface Props {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default function PatientDetails({ params }: Props) {
-  const { id } = params;
-  const [patient, setPatient] = useState<Patient | null>(null);
-  const [loading, setLoading] = useState(true);
-
-  // Simulation d'une fetch API
-  useEffect(() => {
-    async function fetchPatient() {
-      // Simule un appel API ici
-      // Remplace par ta méthode fetch ou Prisma réelle
-      await new Promise((r) => setTimeout(r, 1000));
-      setPatient({
-        id,
-        name: "Aminata Koné",
-        age: 32,
-        email: "aminata.kone@example.com",
-        phone: "+225 01 23 45 67 89",
-        address: "Abidjan, Côte d'Ivoire",
-        medicalHistory:
-          "Hypertension, allergie aux pénicillines, chirurgie appendicite en 2019.",
-        lastVisit: "2025-06-01",
-      });
-      setLoading(false);
-    }
-    fetchPatient();
-  }, [id]);
-
-  if (loading)
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <p className="text-gray-600 dark:text-gray-300">Chargement...</p>
-      </div>
-    );
-
-  if (!patient)
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <p className="text-red-600 dark:text-red-400">Patient non trouvé.</p>
-      </div>
-    );
+export default async function PatientDetails({ params }: Props) {
+  const { id } = await params;
+  
+  // Simulation d'une fetch API côté serveur
+  // Remplace par ta méthode fetch ou Prisma réelle
+  await new Promise((r) => setTimeout(r, 1000));
+  
+  const patient: Patient = {
+    id,
+    name: "Aminata Koné",
+    age: 32,
+    email: "aminata.kone@example.com",
+    phone: "+225 01 23 45 67 89",
+    address: "Abidjan, Côte d'Ivoire",
+    medicalHistory:
+      "Hypertension, allergie aux pénicillines, chirurgie appendicite en 2019.",
+    lastVisit: "2025-06-01",
+  };
 
   return (
     <section className="max-w-4xl mx-auto p-6 bg-white dark:bg-gray-800 rounded-md shadow-md mt-8">
