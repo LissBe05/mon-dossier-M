@@ -2,8 +2,21 @@
 
 import Sidebar from "@/components/Sidebar";
 import PeriodLegend from "@/components/PeriodLegend";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, FileMedical, CalendarCheck } from "lucide-react";
+import Card from "@/components/ui/card";
+import { Users, FileText, CalendarCheck } from "lucide-react";
+
+// Composants card locaux
+function CardHeader({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return <div className={`p-6 pb-2 ${className}`}>{children}</div>;
+}
+
+function CardTitle({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return <h3 className={`text-sm font-medium ${className}`}>{children}</h3>;
+}
+
+function CardContent({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return <div className={`p-6 pt-0 ${className}`}>{children}</div>;
+}
 
 export default function DashboardPage() {
   return (
@@ -28,7 +41,7 @@ export default function DashboardPage() {
           <StatCard
             title="Dossiers médicaux"
             value="342"
-            icon={<FileMedical className="w-6 h-6 text-green-600" />}
+            icon={<FileText className="w-6 h-6 text-green-600" />}
           />
           <StatCard
             title="Rendez-vous aujourd'hui"
@@ -52,8 +65,8 @@ function StatCard({
 }) {
   return (
     <Card className="bg-white dark:bg-gray-800 shadow-md">
-      <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-medium">{title}</CardTitle>
+      <CardHeader>
+        <CardTitle>{title}</CardTitle>
         {icon}
       </CardHeader>
       <CardContent>
