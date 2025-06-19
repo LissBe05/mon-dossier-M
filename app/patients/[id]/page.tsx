@@ -1,4 +1,4 @@
-import PatientCard from "./components/PatientCard";
+import PatientCard from "@/components/PatientCard"
 
 interface Patient {
   id: string;
