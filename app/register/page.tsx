@@ -9,7 +9,7 @@ export default function RegisterPage() {
 
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
-    // Logique Firebase d’inscription à implémenter ici
+    // Logique Firebase d'inscription à implémenter ici
     console.log("Register:", email, password);
   };
 
@@ -32,7 +32,7 @@ export default function RegisterPage() {
           onChange={(e) => setPassword(e.target.value)}
         />
         <button type="submit" className="bg-blue-600 text-white px-4 py-2 rounded w-full">
-          S'inscrire
+          S&apos;inscrire
         </button>
       </form>
     </div>

@@ -58,8 +58,8 @@ export default function Navbar() {
             Connexion
           </Link>
           <Link href="/register" className="text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700">
-          S'inscrire
-        </Link>
+            S&apos;inscrire
+          </Link>
         </div>
       )}
     </nav>

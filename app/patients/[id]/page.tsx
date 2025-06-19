@@ -1,5 +1,3 @@
-import PatientCard from "@/components/PatientCard"
-
 interface Patient {
   id: string;
   name: string;
