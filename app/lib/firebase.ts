@@ -3,14 +3,16 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyAwT9uZel0xZyjntzkSDOofnu4cVTakvdE",
-    authDomain: "flavor-ecac0.firebaseapp.com",
-    projectId: "flavor-ecac0",
-    storageBucket: "flavor-ecac0.firebasestorage.app",
-    messagingSenderId: "670781445965",
-    appId: "1:670781445965:web:08c01478ac50494f228904",
-    measurementId: "G-ZLVHHRHRH1"
+  apiKey: "AIzaSyDq0kffhIG0Hr3HbDLNyc2AwbnGy3xpIvU",
+  authDomain: "bliss-d5d88.firebaseapp.com",
+  projectId: "bliss-d5d88",
+  storageBucket: "bliss-d5d88.firebasestorage.app",
+  messagingSenderId: "889133161334",
+  appId: "1:889133161334:web:5e01c50ae75ccdf34bf857",
+  measurementId: "G-D7PX38DWSN"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app); 
+const analytics = getAnalytics(app);
+    
