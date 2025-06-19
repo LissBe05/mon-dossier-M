@@ -26,7 +26,7 @@ export default function MedecinDashboard() {
             icon={<CalendarCheck className="w-6 h-6 text-blue-600" />}
           />
           <MedecinStat
-            title="Consultations aujourd’hui"
+            title="Consultations aujourd'hui"
             value="3"
             icon={<Stethoscope className="w-6 h-6 text-green-600" />}
           />
