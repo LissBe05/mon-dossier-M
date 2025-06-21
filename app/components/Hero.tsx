@@ -35,7 +35,7 @@ export default function Hero() {
           suivez votre parcours médical en toute sécurité.
         </p>
         <Link
-          href="/app/signup"
+          href="/signup"
           className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-12 rounded-lg shadow-lg transition"
         >
           Commencer maintenant

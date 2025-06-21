@@ -20,15 +20,19 @@ export default function Navbar() {
           <Link href="/" className="text-gray-700 hover:text-blue-600">
             Accueil
           </Link>
-          <Link href="/app/patients" className="text-gray-700 hover:text-blue-600">
-            Patients
+          <Link href="/services" className="text-gray-700 hover:text-blue-600">
+            Service
           </Link>
-          <Link href="/app/dashboard" className="text-gray-700 hover:text-blue-600">
-            Tableau de bord
+          <Link href="/avis" className="text-gray-700 hover:text-blue-600">
+            Avis
           </Link>
-          <Link href="/app/login" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+          <Link href="/login" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
             Connexion
           </Link>
+        
+        <Link href="/register" className="text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700">
+            S&apos;inscrire
+        </Link>
         </div>
 
         {/* Menu mobile toggle */}
@@ -45,18 +49,15 @@ export default function Navbar() {
           <Link href="/" className="block text-gray-700 hover:text-blue-600">
             Accueil
           </Link>
-          <Link href="/medecin/[id]/page" className="block text-gray-700 hover:text-blue-600">
-            Medecin
-          </Link>
-          <Link href="/patients" className="block text-gray-700 hover:text-blue-600">
-            Patients
-          </Link>
-          <Link href="/dashboard" className="block text-gray-700 hover:text-blue-600">
-            Tableau de bord
-          </Link>
+        
+          <Link href="/services" className="hover:text-blue-600 font-medium transition">Services</Link>
+
+          <Link href="/avis" className="text-sm font-medium hover:underline">Avis</Link>
+
           <Link href="/login" className="block bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
             Connexion
           </Link>
+
           <Link href="/register" className="text-white bg-blue-600 px-4 py-2 rounded hover:bg-blue-700">
             S&apos;inscrire
           </Link>
