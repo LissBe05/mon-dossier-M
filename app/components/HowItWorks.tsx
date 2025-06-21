@@ -40,7 +40,7 @@ export default function HowItWorks() {
             className="bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer overflow-hidden flex flex-col"
           >
             <div className="h-56 w-full">
-              <img
+              <image
                 src={image}
                 alt={title}
                 className="w-full h-full object-cover"

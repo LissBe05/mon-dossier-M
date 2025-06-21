@@ -33,7 +33,7 @@ export default function LoginForm() {
       } else if (data.role === "medecin") {
         router.push("/medecins/dashboard");
       }
-    } catch (error) {
+    } catch (error) {errors.email && <span>Email invalide</span>}
       setErrorMessage("Identifiants incorrects ou erreur serveur.");
     }
   };

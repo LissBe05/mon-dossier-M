@@ -35,7 +35,7 @@ export default function Features() {
             className="relative bg-white pt-20 pb-6 px-4 rounded-xl shadow-lg hover:shadow-2xl transition duration-300 text-center"
           >
             <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
-              <img
+              <image
                 src={feature.image}
                 alt={feature.title}
                 className="w-28 h-28 rounded-full object-cover ring-4 ring-white shadow-md"
