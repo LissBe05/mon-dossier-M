@@ -33,7 +33,7 @@ export default function LoginForm() {
       } else if (data.role === "medecin") {
         router.push("/medecins/dashboard");
       }
-    } catch (error) {errors.email && <span>Email invalide</span>}
+    } catch (error) {
       setErrorMessage("Identifiants incorrects ou erreur serveur.");
     }
   };
@@ -95,7 +95,9 @@ export default function LoginForm() {
           </label>
         </div>
         {errors.role && (
-          <p className="text-red-500 text-sm mt-1">Veuillez sélectionner un rôle.</p>
+          <p className="text-red-500 text-sm mt-1">
+            Veuillez sélectionner un rôle.
+          </p>
         )}
       </div>
 
