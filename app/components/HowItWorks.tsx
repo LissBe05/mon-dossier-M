@@ -1,56 +1,53 @@
 "use client";
 
+import Image from "next/image";
+
 const steps = [
   {
-    title: "Créer un compte sécurisé",
-    description:
-      "Inscrivez-vous rapidement avec un email sécurisé pour protéger vos données personnelles.",
+    title: "1. Inscription rapide",
+    description: "Créez un compte en quelques clics avec vos informations de base.",
     image: "/signup.jpg",
   },
   {
-    title: "Remplir vos informations médicales",
-    description:
-      "Ajoutez vos antécédents, allergies et traitements pour un suivi personnalisé.",
+    title: "2. Ajout de vos informations médicales",
+    description: "Complétez votre profil avec vos antécédents, traitements, et contacts médicaux.",
     image: "/medical-info.jpg",
   },
   {
-    title: "Partager avec votre médecin",
-    description:
-      "Autorisez votre médecin à accéder à votre dossier pour un meilleur diagnostic.",
-    image: "/share.jpg",
-  },
-  {
-    title: "Consulter votre historique à tout moment",
-    description:
-      "Accédez à vos rendez-vous, prescriptions et résultats d'examens en un clic.",
-    image: "/history.jpg",
+    title: "3. Consultation et gestion",
+    description: "Accédez à vos dossiers, téléchargez des documents, et suivez vos consultations.",
+    image: "/consultation.jpg",
   },
 ];
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 bg-gray-50">
-      <h2 className="text-4xl font-extrabold text-center mb-14 text-blue-700">
-        Comment ça marche ?
-      </h2>
-      <div className="max-w-6xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-4 px-6">
-        {steps.map(({ title, description, image }, index) => (
+    <section className="py-20 bg-white">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl font-extrabold text-blue-700">Comment ça fonctionne ?</h2>
+        <p className="text-gray-600 mt-2">
+          Quelques étapes simples pour prendre le contrôle de votre santé.
+        </p>
+      </div>
+
+      <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-12 px-6">
+        {steps.map((step, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer overflow-hidden flex flex-col"
+            className="bg-blue-50 p-6 rounded-xl shadow hover:shadow-md transition text-center"
           >
-            <div className="h-56 w-full">
-              <image
-                src={image}
-                alt={title}
-                className="w-full h-full object-cover"
+            <div className="mb-4">
+              <Image
+                src={step.image}
+                alt={step.title}
+                width={200}
+                height={200}
+                className="mx-auto rounded-lg shadow-md object-cover"
                 loading="lazy"
               />
             </div>
-            <div className="p-5 flex-1 flex flex-col justify-between">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
-              <p className="text-gray-600 text-sm">{description}</p>
-            </div>
+            <h3 className="text-xl font-bold text-blue-800">{step.title}</h3>
+            <p className="text-gray-600 mt-2">{step.description}</p>
           </div>
         ))}
       </div>
