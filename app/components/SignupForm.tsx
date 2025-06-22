@@ -3,8 +3,9 @@
 import { useForm } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/lib/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, db } from "@/lib/firebase";
+import { doc, setDoc } from "firebase/firestore";
 
 interface FormValues {
   email: string;
@@ -12,7 +13,7 @@ interface FormValues {
   role: "patient" | "medecin";
 }
 
-export default function LoginForm() {
+export default function SignupForm() {
   const {
     register,
     handleSubmit,
@@ -23,26 +24,33 @@ export default function LoginForm() {
   const router = useRouter();
 
   const onSubmit = async (data: FormValues) => {
+    setErrorMessage(null);
     try {
-      const userCred = await signInWithEmailAndPassword(
+      const { user } = await createUserWithEmailAndPassword(
         auth,
         data.email,
         data.password
       );
 
-      // Redirige selon le rôle
+      // Stocker les infos dans Firestore
+      await setDoc(doc(db, "users", user.uid), {
+        email: data.email,
+        role: data.role,
+        createdAt: new Date(),
+      });
+
+      // Redirection selon le rôle
       if (data.role === "patient") {
         router.push("/patients/dashboard");
       } else {
         router.push("/medecins/dashboard");
       }
-    } catch (err) {
-      console.error(err);
-      setErrorMessage("Échec de connexion. Vérifiez vos informations.");
+    } catch (error) {
+      console.error(error);
+      setErrorMessage("Erreur lors de l'inscription. Vérifie tes informations.");
     }
   };
 
-  // ✅ Le return DOIT être dans la fonction LoginForm
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div>
@@ -113,9 +121,9 @@ export default function LoginForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded transition disabled:opacity-50"
+        className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded transition disabled:opacity-50"
       >
-        {isSubmitting ? "Connexion..." : "Se connecter"}
+        {isSubmitting ? "Création en cours..." : "S'inscrire"}
       </button>
     </form>
   );

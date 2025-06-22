@@ -34,6 +34,7 @@ export default function LoginForm() {
         router.push("/medecins/dashboard");
       }
     } catch (error) {
+      console.error(error);
       setErrorMessage("Identifiants incorrects ou erreur serveur.");
     }
   };
