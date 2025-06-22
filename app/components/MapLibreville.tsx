@@ -1,12 +1,15 @@
-// components/MapLibreville.tsx
 'use client';
 
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
-// Fix icône par défaut
-delete (L.Icon.Default.prototype as unknown as { _getIconUrl: () => void })._getIconUrl;
+// Fix icône par défaut uniquement si la propriété existe
+const iconPrototype = L.Icon.Default.prototype as { _getIconUrl?: () => string };
+if (iconPrototype._getIconUrl) {
+  delete iconPrototype._getIconUrl;
+}
+
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
   iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
